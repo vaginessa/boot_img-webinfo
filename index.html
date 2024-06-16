@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <head>
-  <title>Android Boot Image Info Dumper</title>
-  <script src="KaitaiStream.js"></script>
-  <script src="AndroidImg.js"></script>
-  <style>
-    table {
+	<title>Android Boot Image Info Dumper</title>
+</head>
+<body>Android Boot Image Info Dumper</body>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1" name="viewport" /></html>
+<title></title>
+<script src="KaitaiStream.js"></script><script src="AndroidImg.js"></script>
+<style type="text/css">table {
       border: 4px double black;
       border-collapse: collapse;
       font-family: monospace;
@@ -23,26 +23,18 @@
       padding: 3px;
       border: 1px solid black;
     }
-  </style>
-</head>
+</style>
+<center>
+<h1 style="text-align: center;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"><strong>Android Boot Image Info Dumper</strong></span></h1>
+</center>
 
-<body>
-  <center>
-    <h1>Android Boot Image</h1>
-    </br>
-    <label for="file">Select boot image:</label>
-    <input type="file" id="files" name="file"/>
-    </br>
-    <div id="patch_block" style="display:none">
-      <label for="os_patch_level">Patch to new date:</label>
-      <input type="month" id="os_patch_level" name="os_patch_level" min="2000-01" max="2127-12" value="2020-01" pattern="2[01][0-9]{2}-[01][0-9]" onchange="enable_patch_button(event);"/>
-      <input type="button" id="patch" value="Patch" accesskey="p" disabled onclick="patch_image(event);"/>
-      </br>
-    </div>
-    <output id="info"></output>
-  </center>
+<pre style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;">
+<label for="file">Select boot image:</label> <input id="files" name="file" type="file" /></pre>
 
-  <script>
+<center>
+<div id="patch_block" style="display:none"><label for="os_patch_level">Patch to new date:</label> <input id="os_patch_level" max="2127-12" min="2000-01" name="os_patch_level" onchange="enable_patch_button(event);" pattern="2[01][0-9]{2}-[01][0-9]" type="month" value="2020-01" /> <input accesskey="p" disabled="disabled" id="patch" onclick="patch_image(event);" type="button" value="Patch" /></div>
+</center>
+<script>
     var boot_img_file;
 
     function patch_image(e) {
@@ -189,6 +181,3 @@
     document.getElementById('files').addEventListener('change', dump_boot_info, false);
     document.getElementById('patch').disabled = true;
   </script>
-</body>
-
-</html>
